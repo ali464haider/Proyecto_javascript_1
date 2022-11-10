@@ -1,0 +1,315 @@
+body {
+    width: 100%;
+    height: 150vh;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    line-height: 1.42857;
+}
+
+*,
+::after,
+::before {
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #111827;
+    position: relative;
+    top: 0%;
+    width: 100%;
+    color: white;
+    z-index: 11;
+    position: fixed;
+}
+
+.navbar .logo {
+    padding: 0 15px;
+}
+
+.navbar .logo a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.navbar .logo a:hover {
+    color: #9400FF;
+}
+
+.navbar .nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .nav ul li {
+    padding: 0px 20px;
+}
+
+.navbar .nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .nav ul li a:hover {
+
+    color: #9400FF;
+}
+
+.buscar input {
+    width: 200px;
+    border-radius: 50px;
+    height: 31px;
+    padding: 0px 10px;
+    background: transparent none repeat scroll 0% 0%;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    margin-left: 150%;
+    outline: none;
+}
+
+.buscar input:hover {
+    outline: none;
+    border-color: #9400FF;
+}
+
+.login {
+    margin-left: 27%;
+    display: flex;
+}
+
+.login button {
+    margin: 0px 10px;
+    margin: 0px 15px;
+    width: 66px;
+    height: 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.login #btn-login {
+    border-right: 1px solid white;
+    margin-right: -6px;
+}
+
+.login button:hover {
+    color: #9400FF;
+}
+
+.home-content {
+    box-sizing: border-box;
+    margin: 0px 10%;
+    margin-top: 10%;
+}
+
+.home-content .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #d4d7dd;
+    position: relative;
+    margin: 48px 0;
+    text-align: center;
+    padding: 0;
+}
+
+.divider p {
+    font-size: 18px;
+    color: black;
+}
+
+.divider p {
+    display: inline-block;
+    padding: 0 20px;
+    margin: 0;
+    position: relative;
+    background-color: #fff;
+    top: -14px;
+}
+
+.home-content .categorias {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.home-content .categorias .categoria-item {
+    position: relative;
+    width: 233px;
+    margin: 8px;
+    overflow: hidden;
+    text-decoration: none;
+
+}
+
+.home-content .categorias .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 60, 64, .8);
+    z-index: 9;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+
+.home-content .categorias .title {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    margin: auto;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+
+}
+
+
+.home-content .categorias img {
+    width: 90%;
+    height: auto;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+    object-fit: contain;
+}
+
+.categoria-item:hover {
+    text-decoration: none
+}
+
+.categoria-item:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.categoria-item:hover .overlay {
+    background-color: rgba(0, 117, 206, .9)
+}
+
+.navbar .carrito img {
+    width: 34px;
+    height: 34px;
+    background-color: black;
+    color: purple;
+    opacity: 0.8;
+    border-radius: 34px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.movil-content #tablaObjetoMoviles {
+    margin: 0 auto;
+    cursor: pointer;
+    color: white;
+    width: 600px;
+    text-align: center;
+}
+
+#tablaObjetoMoviles tr {
+    box-sizing: border-box;
+}
+
+#tablaObjetoMoviles th {
+    background-color: #36304a;
+    text-transform: uppercase;
+}
+
+#tablaObjetoMoviles tr td,
+th {
+    padding: 10px 15px;
+    margin: 0%;
+    border-radius: 10px;
+}
+
+#tablaObjetoMoviles tr td {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+#tablaObjetoMoviles tr td button {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#tablaObjetoMoviles tr td:last-child:hover {
+    background-color: blue;
+}
+
+#carrito #carrito-box {
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    background-color: #d4d7dd;
+    z-index: 10;
+    padding-top: 6% !important;
+    padding: 20px;
+}
+
+#carrito #carrito-box table td,
+th {
+    padding: 5px;
+    text-align: center;
+}
+
+#carrito #carrito-box #precioTotal {
+    font-size: 25px;
+    line-height: 40px;
+}
+
+#carrito #carrito-box #precioTotal input[type=text] {
+    width: 80px;
+    height: 29px;
+    padding: 1px;
+    position: relative;
+    bottom: 10%;
+    left: 3%;
+    border: none;
+    background-color: #d4d7dd;
+}
+#carrito #carrito-box #precioTotal input:hover{
+    border-color: #9400FF;
+}
+
+#carrito #carrito-box #precioTotal>a button {
+    position: relative;
+    top: 39px;
+    left: -60%;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#carrito #carrito-box #precioTotal>a button:hover {
+    background-color: blue;
+}
+
+#carrito #carrito-box table td img {
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+<h1>Tu carrito</h1>
+
+<div id="lista">
+    
+</div>
+
+</body>
+
+<script>
+    let carrito=[];
+    carrito = JSON.parse(localStorage.getItem("compra"));
+    console.log(carrito);
+    var lista =document.getElementById("lista");
+
+    carrito.forEach(objeto=>{
+        lista.innerHTML+="Has comprado un "+objeto.marca+" del modelo "+objeto.modelo
+        +" con un precio por unidad "+objeto.price+" y su cantidad es "+objeto.cantidad+"<br>";
+    })
+
+    lista.innerHTML+="Precio final de la compra es : "+JSON.parse(localStorage.getItem("precioFinal"));
+
+
+</script>
+</html>
