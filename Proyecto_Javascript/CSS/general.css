@@ -74,7 +74,7 @@ body {
     background: transparent none repeat scroll 0% 0%;
     color: rgb(255, 255, 255);
     font-size: 14px;
-    margin-left: 150%;
+    margin-left: 130%;
     outline: none;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .login {
-    margin-left: 27%;
+    margin-left: 16%;
     display: flex;
 }
 
@@ -303,7 +303,16 @@ th {
     cursor: pointer;
 }
 
-#carrito #carrito-box #precioTotal>a button:hover {
+#btn-vaciar {
+    position: relative;
+    left: 113px;
+    width: 98px;
+    border-radius: 30px;
+    height: 30px;
+    bottom: 2px;
+  }
+
+#carrito #carrito-box button:hover {
     background-color: blue;
 }
 

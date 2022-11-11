@@ -7,11 +7,11 @@ window.onload = () => {
 }
 
 function cargarListaMoviles(lista) {
-    lista.push(new Movil("Iphone", "X", "6.1", "2800mah", "400"));
-    lista.push(new Movil("Iphone", "11", "6.1", "2800mah", "599"));
-    lista.push(new Movil("Iphone", "12", "6.1", "3000mah", "899"));
-    lista.push(new Movil("Iphone", "13 pro max", "6.7", "4320mah", "1259"));
-    lista.push(new Movil("Iphone", "14 pro max", "6.7", "4320mah", "1459"));
+    lista.push(new Movil("Samsung", "s10", "6.1", "3600mah", "300"));
+    lista.push(new Movil("Samsung", "s20", "6.1", "3800mah", "600"));
+    lista.push(new Movil("Samsung", "s20-Ultra", "6.8", "4000mah", "799"));
+    lista.push(new Movil("Samsung", "s21", "6.7", "4200mah", "800"));
+    lista.push(new Movil("Samsung", "s22-Ultra", "6.8", "4500mah", "999"));
 
 }
 
