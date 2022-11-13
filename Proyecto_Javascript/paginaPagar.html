@@ -23,8 +23,13 @@
     console.log(carrito);
     var lista =document.getElementById("lista");
 
+    let Usuario = "";
+
+    Usuario = JSON.parse(sessionStorage.getItem("Usuario"));
+
+    lista.innerHTML+= "El Usuario es: "+Usuario.nombre+"<br>";
     carrito.forEach(objeto=>{
-        lista.innerHTML+="Has comprado un "+objeto.marca+" del modelo "+objeto.modelo
+        lista.innerHTML+="Ha comprado un "+objeto.marca+" del modelo "+objeto.modelo
         +" con un precio por unidad "+objeto.price+" y su cantidad es "+objeto.cantidad+"<br>";
     })
 

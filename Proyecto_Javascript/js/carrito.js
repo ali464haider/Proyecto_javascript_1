@@ -10,7 +10,9 @@ function pintarCarrito(){
         var h1=document.createElement("h1");
         h1.innerHTML="Cesta";
         div.appendChild(h1);
+        cargarObjetosPagina();
         cargarListaCarrito(listaObjetoCarrito);
+
 
     }else{
         carrito.removeChild(document.getElementById("carrito-box"));

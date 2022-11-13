@@ -4,6 +4,7 @@ listaMoviles = [];
 window.onload = () => {
     cargarListaMoviles(listaMoviles);
     pintarTabla(listaMoviles);
+    comprobarEstadoUsuario();
 }
 
 function cargarListaMoviles(lista) {

@@ -3,24 +3,26 @@ let listaObjetoCarrito = [];
 let carritoCompra = [];
 
 
+function cargarObjetosPagina(){
+    listaObjetoCarrito = [];
+    carritoCompra = [];
+    if (JSON.parse(localStorage.getItem("compra")).length>0) {
+        carritoCompra = JSON.parse(localStorage.getItem("compra"));
+        carritoCompra.forEach(objeto => {
+                listaObjetoCarrito.push(objeto);
+        })
+    }
+}
 
 
 function AgregarAlCarrito(pos) {
 
-    console.log("ya se cargo la pagina");
-    if (localStorage.getItem("compra")) {
-        carritoCompra = JSON.parse(localStorage.getItem("compra"));
-            carritoCompra.forEach(objeto => {
-                    listaObjetoCarrito.push(objeto);
-                })
-    }
-
-    console.log("ya se cargo la lista");
+    cargarObjetosPagina();
 
     objeto = listaMoviles[pos];
 
-    
-    if (!listaObjetoCarrito.includes(objeto)) {
+
+    if (listaObjetoCarrito.findIndex(movil => movil.modelo == objeto.modelo) ==-1) {
         objeto.cantidad = 1;
         listaObjetoCarrito.push(objeto);
     } else {
@@ -39,7 +41,7 @@ function AgregarAlCarrito(pos) {
 
 function cargarListaCarrito(lista) {
 
-   
+
 
 
     let precioFInalProductos = 0;
@@ -121,6 +123,8 @@ function cargarListaCarrito(lista) {
 
     localStorage.setItem("precioFinal", JSON.stringify(precioFInalProductos));
 
+    carritoCompra=JSON.parse(localStorage.getItem("compra"));
+
 
 
     div.appendChild(tabla);
@@ -178,3 +182,6 @@ function vaciarCarrito() {
     carritoCompra = [];
     cargarListaCarrito(listaObjetoCarrito);
 }
+
+
+

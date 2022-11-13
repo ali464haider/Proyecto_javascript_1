@@ -8,6 +8,7 @@ listaCategorias = [
 window.onload = () => {
     var categoria = document.getElementsByClassName("categorias")[0];
     cargarCategorias(listaCategorias);
+    comprobarEstadoUsuario();
 }
 
 function cargarCategorias(lista) {
