@@ -6,7 +6,7 @@ let carritoCompra = [];
 function cargarObjetosPagina(){
     listaObjetoCarrito = [];
     carritoCompra = [];
-    if (JSON.parse(localStorage.getItem("compra")).length>0) {
+    if (JSON.parse(localStorage.getItem("compra"))!==null) {
         carritoCompra = JSON.parse(localStorage.getItem("compra"));
         carritoCompra.forEach(objeto => {
                 listaObjetoCarrito.push(objeto);
@@ -16,22 +16,31 @@ function cargarObjetosPagina(){
 
 
 function AgregarAlCarrito(pos) {
-
-    cargarObjetosPagina();
-
-    objeto = listaMoviles[pos];
-
-
-    if (listaObjetoCarrito.findIndex(movil => movil.modelo == objeto.modelo) ==-1) {
-        objeto.cantidad = 1;
-        listaObjetoCarrito.push(objeto);
-    } else {
-        var posMovil = listaObjetoCarrito.findIndex(movil => movil.modelo == objeto.modelo);
-        listaObjetoCarrito[posMovil].cantidad++;
+    let noComprar = false;
+    if(sessionStorage.getItem("Usuario")!=null){
+        var Usuario = JSON.parse(sessionStorage.getItem("Usuario"));
+        if(Usuario.role=="admin")
+        noComprar= true;
     }
 
+    if(!noComprar){
+        cargarObjetosPagina();
 
-    cargarListaCarrito(listaObjetoCarrito);
+        objeto = listaMoviles[pos];
+    
+    
+        if (listaObjetoCarrito.findIndex(movil => movil.modelo == objeto.modelo) ==-1) {
+            objeto.cantidad = 1;
+            listaObjetoCarrito.push(objeto);
+        } else {
+            var posMovil = listaObjetoCarrito.findIndex(movil => movil.modelo == objeto.modelo);
+            listaObjetoCarrito[posMovil].cantidad++;
+        }
+    
+    
+        cargarListaCarrito(listaObjetoCarrito);
+    }
+   
 
 
 
@@ -102,6 +111,26 @@ function cargarListaCarrito(lista) {
         tr.appendChild(td);
 
         td = document.createElement("td");
+        button= document.createElement("button");
+        button.innerHTML = "+";
+        td.appendChild(button);
+        td.addEventListener("click",()=>{
+            objeto.cantidad++;
+            cargarListaCarrito(lista)});
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        button= document.createElement("button");
+        button.innerHTML = "-";
+        td.appendChild(button);
+        td.addEventListener("click",()=>{
+            if(objeto.cantidad>0)
+            objeto.cantidad--;
+            cargarListaCarrito(lista)});
+        tr.appendChild(td);
+
+
+        td = document.createElement("td");
         var img = document.createElement("img");
         img.setAttribute("src", "images/borrar.png")
         img.addEventListener("click", () => borrarProducto(pos));
@@ -152,7 +181,15 @@ function cargarListaCarrito(lista) {
         btn.id = "btn-pagar";
         btn.innerHTML = "Ir A Pagar";
         var a = document.createElement('a');
-        a.setAttribute("href", "paginaPagar.html");
+        
+        a.addEventListener("click",()=>{
+            if(listaObjetoCarrito.length==0)
+            alert("compra primero para ir a pagar")
+            else if(sessionStorage.getItem("Usuario")!=null)
+            location.href="paginaPagar.html";
+            else 
+            alert("Iniciar Sesion primero para pagar los productos")
+        })
         a.appendChild(btn);
         input.append(a);
 
@@ -182,6 +219,7 @@ function vaciarCarrito() {
     carritoCompra = [];
     cargarListaCarrito(listaObjetoCarrito);
 }
+
 
 
 

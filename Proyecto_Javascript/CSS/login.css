@@ -45,10 +45,11 @@ span{
     margin: 2%;
     background-color: white;
     color: aqua;
-    width: 230px;
+    width: 250px;
     
 }
 .content input{
+    
     outline: none;
     border: none;
     border-left: 2px solid powderblue;
@@ -91,15 +92,10 @@ span{
     text-decoration: none;
     color: blue;
 }
-.content-footer #chk{
-    margin-right: 1%;
-}
-#create{
-    position: relative;
-    left: 45%;
-    bottom: 35%;
-}
 
-#login > p{
+#login>p{
     color: red;
 }
+
+
+

@@ -1,18 +1,6 @@
 
 
-let listaUsuarios = [];
 
-function cargarListaUsuarios() {
-    listaUsuarios.push(new Usuario("Ali", "Haider", "ali123", "1234", "admin"));
-    listaUsuarios.push(new Usuario("John", "williams", "john123", "1234", "cliente"));
-    listaUsuarios.push(new Usuario("Sergio", "s", "sergio123", "1234", "cliente"));
-    listaUsuarios.push(new Usuario("Juan", "j", "juan123", "1234", "cliente"));
-    listaUsuarios.push(new Usuario("David", "d", "david123", "1234", "cliente"));
-}
-
-window.onload = () => {
-    cargarListaUsuarios();
-}
 
 
 var login = document.getElementById("login");

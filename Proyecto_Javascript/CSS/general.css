@@ -241,6 +241,11 @@ th {
     border-radius: 10px;
 }
 
+
+#tablaObjetoMoviles td:nth-child(7) img{
+    width: 30px;
+}
+
 #tablaObjetoMoviles tr td {
     background-color: grey;
     border-radius: 10px;
@@ -254,8 +259,13 @@ th {
     cursor: pointer;
 }
 
-#tablaObjetoMoviles tr td:last-child:hover {
-    background-color: blue;
+
+#tablaObjetoMoviles tr td:nth-child(6):hover,td:last-child:hover {
+    background-color: blue !important;
+}
+
+#tablaObjetoMoviles tr th:last-child,td:last-child{
+    visibility: hidden;
 }
 
 #carrito #carrito-box {
